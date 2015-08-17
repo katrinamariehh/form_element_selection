@@ -1,0 +1,56 @@
+  <form method="post" class="contact-us" action="">
+
+      <h2>Contact Us</h2>
+      <div class="small-12 medium-6 columns right margin">
+
+
+        <label for="name"><strong>Name</strong></label>
+        <input type="text" name="name" id="name" value="">
+
+        <label for="email_address"><strong>Email address</strong></label>
+        <input type="text" name="email_address" id="email_address" value=''>
+
+        <label for="phone_number"><strong>Phone number</strong></label>
+        <input type="tel" name="phone_number" id="phone_number" value="">
+
+        <label for="subject"><strong>What is the nature of your inquiry?</strong></label>
+        <select name="subject" id="subject">
+            <option value="" disabled selected>Please Select...</option>
+            <option value="athlete">Athlete requests</option>
+            <option value="dealer">Dealer requests</option>
+            <option value="press">Press requests</option>
+            <option value="feedback">Product feedback</option>
+            <option value="support">Support requests</option>
+
+        </select>
+        <div id="company">
+            <label for="company"><strong>Company</strong></label>
+            <input type="text" name="company" id="company" value="">
+        </div>
+
+        <div id="comment">
+            <label for="comment"><strong>Your comment</strong></label>
+            <textarea rows="5"name="comment" class="" maxlength="" id="comment"></textarea>
+        </div>
+    </div>
+
+<span class="clear"></span>
+
+
+  </form>
+
+</div>
+
+<script type='text/javascript'>
+document.getElementById("company").style.display = 'none';
+function displayCompany() {
+    var subject = document.getElementById('subject');
+    if (subject.value == "dealer" | subject.value == "press" | subject.value == "athlete") {
+        document.getElementById('company').style.display = 'inline';
+    } else {
+        document.getElementById('company').style.display = 'none';
+    }
+}
+var el = document.getElementById("subject");
+el.addEventListener("change", displayCompany, false);
+</script>
